@@ -14,12 +14,7 @@ Coffee our tweet
     {% else %}
     Create tweet
     {% endif %}
-    <form method="post" enctype="multipart/form-data"
-    class="form">
-    {{ form.as_p}}
-    <button type="submit" class="btn btn-warning">Submit</button>
-</form>
-<a herf="{% url 'tweet_list' %}">Back to tweet list</a>
+   
 </h2>
 
 {% endblock %}
