@@ -1,0 +1,25 @@
+{% extends "layout.html"%}
+
+
+{%block title%}
+Coffee our tweet
+{% endblock %}
+
+{%block content%}
+
+<h1 class="text-center mt-4"> Welcom to coffee's Django Project </h1>
+<h2>
+    {% if form.instance.pk %}
+    Edit tweet
+    {% else %}
+    Create tweet
+    {% endif %}
+    <form method="post" enctype="multipart/form-data"
+    class="form">
+    {{ form.as_p}}
+    <button type="submit" class="btn btn-warning">Submit</button>
+</form>
+<a herf="{% url 'tweet_list' %}">Back to tweet list</a>
+</h2>
+
+{% endblock %}

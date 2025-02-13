@@ -1,0 +1,36 @@
+{% extends "layout.html"%}
+
+
+{%block title%}
+Coffee our tweet
+{% endblock %}
+
+{%block content%}
+
+<h1 class="text-center mt-4"> Welcom to coffee's Django Project </h1>
+
+<a class="btn btn-primary mb-3" href="{% url 'tweet_create' %}"> 
+    Create a tweet </a>
+<div class="container row gap-5">
+{% for tweet in tweet %}
+<div class="card bg-secondary text-white mt-2" style="width: 18rem;">
+    <img src={{tweet.photo.url}} class="card-img-top mt-3" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{tweet.user.username}}</h5>
+      <p class="card-text">{{tweet.text}}</p>
+      <a href={% url 'tweet_edit' tweet.id%} class="btn
+       btn-primary">Edit</a>
+       <a href={% url 'tweet_delete' tweet.id%} class="btn
+       btn-danger">Delete</a>
+    </div>
+  </div>
+
+{% endfor %}
+
+</div>
+
+
+
+
+
+{% endblock %}
